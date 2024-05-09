@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.slf4j.Logger;
@@ -34,5 +36,22 @@ public class GreetingAop {
             logger.info(" Despues: " + method + " con los argumentos  " + args);
 
       }
+
+      @AfterReturning("execution(* com.carmen.springboot.app.aop.springbootaop.services.GreetingService.*(..))")
+      private void loggerAfterReturning(JoinPoint joinPoint){
+
+           String method = joinPoint.getSignature().getName();
+           String args = Arrays.toString(joinPoint.getArgs()); //Convertir un array en string
+           logger.info(" Despues de retornar: " + method + " con los argumentos  " + args);
+
+     }
+     @AfterThrowing("execution(* com.carmen.springboot.app.aop.springbootaop.services.GreetingService.*(..))")
+     private void loggerAfterThrowing(JoinPoint joinPoint){
+
+          String method = joinPoint.getSignature().getName();
+          String args = Arrays.toString(joinPoint.getArgs()); //Convertir un array en string
+          logger.info(" Despues de lanzar la excepcion : " + method + " con los argumentos  " + args);
+
+    }
 
 }
