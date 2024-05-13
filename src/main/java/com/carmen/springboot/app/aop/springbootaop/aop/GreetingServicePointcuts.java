@@ -9,11 +9,11 @@ import org.springframework.stereotype.Component;
 public class GreetingServicePointcuts {
 
       @Pointcut("execution(* com.carmen.springboot.app.aop.springbootaop.services.GreetingService.*(..))")
-      private void greetingLoggerPointCut() {
+      public void greetingLoggerPointCut() {
       }
 
       @Pointcut("execution(* com.carmen.springboot.app.aop.springbootaop.services.GreetingService.*(..))")
-      private void greetingOtherPointCut() {
+      public void greetingOtherPointCut() {
       }
 
 }

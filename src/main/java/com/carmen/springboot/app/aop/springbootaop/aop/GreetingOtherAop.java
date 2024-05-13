@@ -18,7 +18,7 @@ public class GreetingOtherAop {
 
       private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-      @Before("greetingOtherPointCut()")
+      @Before("GreetingServicePointcuts.greetingOtherPointCut()")
 
       private void loggerBefore(JoinPoint joinPoint) {
 
@@ -28,7 +28,7 @@ public class GreetingOtherAop {
 
       }
 
-      @After("greetingOtherPointCut()")
+      @After("GreetingServicePointcuts.greetingOtherPointCut()")
       private void loggerAfter(JoinPoint joinPoint) {
 
             String method = joinPoint.getSignature().getName();

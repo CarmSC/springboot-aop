@@ -22,7 +22,7 @@ public class GreetingAop {
 
       private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-      @Before("greetingLoggerPointCut()")
+      @Before("GreetingServicePointcuts.greetingLoggerPointCut()")
       private void loggerBefore(JoinPoint joinPoint) {
 
             String method = joinPoint.getSignature().getName();
@@ -31,7 +31,7 @@ public class GreetingAop {
 
       }
 
-      @After("greetingLoggerPointCut()")
+      @After("GreetingServicePointcuts.greetingLoggerPointCut()")
       private void loggerAfter(JoinPoint joinPoint) {
 
             String method = joinPoint.getSignature().getName();
@@ -40,7 +40,7 @@ public class GreetingAop {
 
       }
 
-      @AfterReturning("greetingLoggerPointCut()")
+      @AfterReturning("GreetingServicePointcuts.greetingLoggerPointCut()")
       private void loggerAfterReturning(JoinPoint joinPoint) {
 
             String method = joinPoint.getSignature().getName();
@@ -49,7 +49,7 @@ public class GreetingAop {
 
       }
 
-      @AfterThrowing("greetingLoggerPointCut()")
+      @AfterThrowing("GreetingServicePointcuts.greetingLoggerPointCut()")
       private void loggerAfterThrowing(JoinPoint joinPoint) {
 
             String method = joinPoint.getSignature().getName();
@@ -58,7 +58,7 @@ public class GreetingAop {
 
       }
 
-      @Around("greetingLoggerPointCut()")
+      @Around("GreetingServicePointcuts.greetingLoggerPointCut()")
       public Object loggerAround(ProceedingJoinPoint joinPoint) throws Throwable {
             String method = joinPoint.getSignature().getName();
             String args = Arrays.toString(joinPoint.getArgs());
