@@ -13,7 +13,9 @@ import org.aspectj.lang.annotation.Before;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
+import org.springframework.core.annotation.Order;
 
+@Order(2)
 @Aspect
 @Component
 public class GreetingAop {
